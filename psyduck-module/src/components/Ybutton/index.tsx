@@ -5,10 +5,9 @@ interface Pbuton{
     type:string
 }
 export default function Ybutton(props: Pbuton) {
-
-    let onChange = () => {
-
-    }
+    console.log(styles);
+    
+    
 	return (
         <div>
             <button className={styles.yButton} >确定</button>

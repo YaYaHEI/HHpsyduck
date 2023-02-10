@@ -534,9 +534,7 @@ module.exports = function (webpackEnv) {
               use: [...getStyleLoaders(
                 {
                   importLoaders: 3,
-                  modules: {
-                    mode: 'icss'
-                  },
+                  modules: true,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
                 'less-loader'
@@ -544,7 +542,7 @@ module.exports = function (webpackEnv) {
               {
                 loader: styleResourcesLoader,
                 options: {
-                  patterns: path.resolve(__dirname, '../src/common.less')
+                  patterns: path.resolve(__dirname, '../src/style/common.less')
                 }
               }
               ],
@@ -556,17 +554,14 @@ module.exports = function (webpackEnv) {
                 {
                   importLoaders: 3,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modules: {
-                    getLocalIdent: getCSSModuleLocalIdent,
-                    mode: 'icss'
-                  },
+                  modules: true
                 },
                 'less-loader'
               ),
               {
                 loader: styleResourcesLoader,
                 options: {
-                  patterns: path.resolve(__dirname, '../src/common.less'),
+                  patterns: path.resolve(__dirname, '../src/style/common.less'),
                 },
               },
               ],
