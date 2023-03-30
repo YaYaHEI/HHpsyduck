@@ -1,11 +1,84 @@
 .yButton{
-    width: 100px;
-    border: 1px solid ;
+    border: 1px solid @purple-6;
     background-color: #ffffff;
     border-color: #d9d9d9;
     border-radius: 4px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+    outline: none;
+    cursor: pointer;
     &:hover{
-        border: 1px solid @purple;
-        color: @purple;
+        color: @purple-6;
     }
 }
+
+.disabled{
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+    color: rgba(0, 0, 0, 0.25);
+    &:hover{
+        color: rgba(0, 0, 0, 0.25);
+    }
+}
+
+.dashed{
+    border: 1px dashed @purple-6;
+    &:hover{
+        border: 1px dashed @purple-5;
+    }
+}
+
+.link{
+    border: none;
+    color: @purple-6;
+    &:hover{
+        border: none;
+        color: @purple-5;
+    }
+}
+
+.text{
+    border: none;
+    background-color: transparent;
+    color: #000;
+    &:hover{
+        border: none;
+        background-color: #f0f0f0;
+        color: #000;
+    }
+}
+
+.primary{
+    background-color: @purple-6;
+    border: 1px solid @purple-6;
+    color: #ffffff;
+    &:hover{
+        border: 1px solid @purple-5;
+        background-color: @purple-5;
+        color: #ffffff;
+    }
+}
+
+
+
+.default{
+    padding: 4px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    height: 32px;
+}
+
+.big{
+    font-size: 16px;
+    height: 40px;
+    padding: 6.428571428571429px 15px;
+    border-radius: 8px;
+}
+
+.small{
+    font-size: 14px;
+    height: 24px;
+    padding: 0px 7px;
+    border-radius: 4px;
+}
+
+

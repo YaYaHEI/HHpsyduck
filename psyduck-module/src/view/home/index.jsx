@@ -1,6 +1,10 @@
 
-export default function index() {
+import Ybutton from "../../components/Ybutton"
+const index = () => {
   return (
-    <div>index</div>
+    <div>
+      <Ybutton danger>确定</Ybutton>
+    </div>
   )
 }
+export default index

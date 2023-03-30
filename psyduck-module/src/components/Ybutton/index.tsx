@@ -1,17 +1,48 @@
-import React from "react"
-import {Button} from 'antd'
-import styles from '../../style/Ybutton.module.less'
-interface Pbuton{
-    type:string
+import React, { useEffect, useState } from "react"
+import { Button } from "antd"
+import styles from "../../style/Ybutton.module.less"
+interface Pbuton {
+	type?: string
+	size?: string
+	onClick?: () => void
+	icon: React.ReactElement
+	children: React.ReactElement
+	disabled: boolean
+	danger: boolean
 }
-export default function Ybutton(props: Pbuton) {
-    console.log(styles);
-    
-    
+const Ybutton: React.FC<Pbuton> = (props) => {
+	let { disabled, onClick } = props
+	useEffect(() => {
+		classSum()
+	}, [])
+
+	const classSum = () => {
+		let disabledVisible = disabled ? ' ' + styles.disabled : ''
+		return styles[props.size ?? "default"] + " " + styles[props.type ?? ""] + disabledVisible
+	}
+
 	return (
-        <div>
-            <button className={styles.yButton} >确定</button>
-            <Button>确定</Button>
-        </div>
-    )
+		<div>
+			<button
+				className={styles.yButton + " " + classSum()}
+				onClick={onClick}
+				disabled={disabled}
+			>
+				{props.icon ? (
+					<span>
+						<i className="iconfont icon-guanbi"></i>
+					</span>
+				) : (
+					""
+				)}
+				<span style={props.icon ? { marginInlineStart: "8px" } : {}}>
+					{props.children}
+				</span>
+			</button>
+			<Button disabled type="primary">
+				测试
+			</Button>
+		</div>
+	)
 }
+export default Ybutton
