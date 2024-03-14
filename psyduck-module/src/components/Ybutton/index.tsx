@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { Button } from "antd"
 import styles from "../../style/Ybutton.module.less"
 interface Pbuton {
@@ -17,8 +17,13 @@ const Ybutton: React.FC<Pbuton> = (props) => {
 	}, [])
 
 	const classSum = () => {
-		let disabledVisible = disabled ? ' ' + styles.disabled : ''
-		return styles[props.size ?? "default"] + " " + styles[props.type ?? ""] + disabledVisible
+		let disabledVisible = disabled ? " " + styles.disabled : ""
+		return (
+			styles[props.size ?? "default"] +
+			" " +
+			styles[props.type ?? ""] +
+			disabledVisible
+		)
 	}
 
 	return (
